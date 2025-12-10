@@ -1,0 +1,13 @@
+{
+    "require": {
+        "wixel/gump": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "app/"
+        }
+    },
+    "script": {
+        "serve": "php -S 127.0.0.1:8000"
+    }
+}
