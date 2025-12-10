@@ -7,7 +7,10 @@
             "": "app/"
         }
     },
-    "script": {
+    "scripts": {
         "serve": "php -S 127.0.0.1:8000"
+    },
+    "config": {
+        "process-timeout": 0
     }
 }
