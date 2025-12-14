@@ -41,6 +41,26 @@ $formConfig = [
 		'type' => 'submit',
 		'id' => 'mySubmit',
 		'label' => 'Senden'
+	],
+	'country' => [
+		'name' => 'country',
+		'type' => 'select',
+		'id' => 'country',
+		'label' => 'Country',
+		'options' => ['Austria', 'Sweden', 'Germany', 'Italy', 'Canada']
+	],
+	'gender' => [
+		'name' => 'gender',
+		'type' => 'radio',
+		'id' => 'gender',
+		'label' => 'Gender',
+		'genders' => ['male', 'female', 'diverse']
+	],
+	'privacy' => [
+		'name' => 'privacy',
+		'type' => 'checkbox',
+		'id' => 'privacy',
+		'label' => 'I read and agree to the general terms and conditions.'
 	]
 ];
 
@@ -65,6 +85,29 @@ foreach ($formConfig as $key => $conf) {
 				$conf['type'],
 				$conf['cols'],
 				$conf['rows'],
+			);
+			break;
+		case 'select':
+			$fields[$key] = new FormLib\Select(
+				$conf['name'],
+				$conf['id'],
+				$conf['label'],
+				$conf['options'],
+			);
+			break;
+		case 'checkbox':
+			$fields[$key] = new FormLib\Checkbox(
+				$conf['name'],
+				$conf['id'],
+				$conf['label'],
+			);
+			break;
+		case 'radio':
+			$fields[$key] = new FormLib\Radiobutton(
+				$conf['name'],
+				$conf['id'],
+				$conf['label'],
+				$conf['genders'],
 			);
 			break;
 		default:
