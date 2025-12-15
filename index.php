@@ -4,43 +4,37 @@ require_once 'vendor/autoload.php';
 
 // Konfiguration aller Inputs
 $formConfig = [
+	'username' => [
+		'name' => 'username',
+		'type' => 'text',
+		'id' => 'myUserName',
+		'label' => 'Username'
+	],
 	'email' => [
 		'name' => 'email',
 		'type' => 'email',
 		'id' => 'myEmail',
 		'label' => 'E-Mail'
 	],
+	'password' => [
+		'name' => 'password',
+		'type' => 'password',
+		'id' => 'myPassword',
+		'label' => 'Password'
+	],
 	'date' => [
 		'name' => 'date',
 		'type' => 'date',
 		'id' => 'myDate',
-		'label' => 'Datum'
-	],
-	'username' => [
-		'name' => 'username',
-		'type' => 'text',
-		'id' => 'myUserName',
-		'label' => 'Benutzername'
+		'label' => 'Date'
 	],
 	'message' => [
 		'name' => 'message',
 		'type' => 'textarea',
 		'id' => 'myMessage',
-		'label' => 'Nachricht',
+		'label' => 'Message',
 		'cols' => 30,
 		'rows' => 5
-	],
-	'password' => [
-		'name' => 'password',
-		'type' => 'password',
-		'id' => 'myPassword',
-		'label' => 'password'
-	],
-	'submit' => [
-		'name' => 'submit',
-		'type' => 'submit',
-		'id' => 'mySubmit',
-		'label' => 'Senden'
 	],
 	'country' => [
 		'name' => 'country',
@@ -54,13 +48,19 @@ $formConfig = [
 		'type' => 'radio',
 		'id' => 'gender',
 		'label' => 'Gender',
-		'genders' => ['male', 'female', 'diverse']
+		'genders' => ['Male', 'Female', 'Diverse']
 	],
 	'privacy' => [
 		'name' => 'privacy',
 		'type' => 'checkbox',
 		'id' => 'privacy',
-		'label' => 'I read and agree to the general terms and conditions.'
+		'label' => 'I agree to the general terms and conditions.'
+	],
+	'submit' => [
+		'name' => 'submit',
+		'type' => 'submit',
+		'id' => 'mySubmit',
+		'label' => 'Send'
 	]
 ];
 
