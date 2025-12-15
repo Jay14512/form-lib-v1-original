@@ -120,6 +120,24 @@ foreach ($formConfig as $key => $conf) {
 			break;
 	}
 }
+
+$errors = [];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$validator = new FormLib\Validation($_POST);
+
+	$validator->required('email');
+	$validator->email('email');
+
+	$validator->required('username');
+	$validator->required('password');
+	$validator->required('country');
+	$validator->required('gender');
+	$validator->required('privacy');
+
+	if ($validator->hasErrors()) {
+		$errors = $validator->getErrors();
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="de">
