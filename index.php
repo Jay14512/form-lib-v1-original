@@ -125,14 +125,14 @@ $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$validator = new FormLib\Validation($_POST);
 
-	$validator->required('email');
-	$validator->email('email');
+	$validator->required('email', 'Email is required');
+	$validator->email('email', 'Please enter a valid email address');
 
-	$validator->required('username');
-	$validator->required('password');
-	$validator->required('country');
-	$validator->required('gender');
-	$validator->required('privacy');
+	$validator->required('username', 'Username is required');
+	$validator->required('password', 'Password is required');
+	$validator->required('country', 'Please select a country');
+	$validator->required('gender', 'Please select a gender');
+	$validator->required('privacy', 'The box must be checked');
 
 	if ($validator->hasErrors()) {
 		$errors = $validator->getErrors();
