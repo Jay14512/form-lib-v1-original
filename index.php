@@ -159,6 +159,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	<div class="container mt-5">
 		<h1>Input Test</h1>
 		<form action="" method="post">
+			<?php if (!empty($errors)): ?>
+				<div class="alert alert-danger">
+					<ul>
+						<?php foreach ($errors as $error): ?>
+							<li><?= htmlspecialchars($error) ?></li>
+						<?php endforeach; ?>
+					</ul>
+				</div>
+			<?php endif; ?>
+
+
 			<?php foreach ($fields as $field): ?>
 				<div class="mb-3">
 					<?= $field->render(); ?>
