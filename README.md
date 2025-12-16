@@ -19,6 +19,10 @@ Each form element is responsible for rendering itself, while validation logic is
 
 The project focuses on clean structure, reusability, and separation of concerns.
 
+Validation errors are displayed using a global alert message for simplicity.  
+A refactored version (v2) improves user experience by showing validation errors directly at the corresponding form fields.
+
+
 ---
 
 ## ✨ Features
